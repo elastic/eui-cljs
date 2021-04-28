@@ -1,0 +1,22 @@
+{:paths ["src"]
+
+ :deps {org.clojure/clojurescript {:mvn/version "1.10.597"}}
+
+ :aliases
+ {:bin
+  {:extra-paths
+   ["bin"]
+   :extra-deps
+   {org.clojure/clojure                 {:mvn/version "1.10.2-alpha1"}
+    cheshire/cheshire                   {:mvn/version "5.10.0"}
+    camel-snake-kebab/camel-snake-kebab {:mvn/version "0.4.1"}}}
+
+  :repl
+  {:main-opts ["-m" "nrepl.cmdline"]}
+
+  :generate
+  {:main-opts ["-m" "generate-lib"]}
+
+  :release
+  {:extra-deps {applied-science/deps-library {:mvn/version "0.4.0"}}
+   :main-opts  ["-m" "applied-science.deps-library"]}}}
