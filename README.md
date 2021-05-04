@@ -2,7 +2,7 @@
 
 Smooths out the experience of using EUI from Clojurescript.
 
-[![Clojars Project](https://img.shields.io/clojars/v/elastic/eui-cljs.svg)](https://clojars.org/elastic/eui-cljs)
+[![Clojars Project](https://img.shields.io/clojars/v/co.elastic/eui-cljs.svg)](https://clojars.org/co.elastic/eui-cljs)
 
 It's currently difficult to track down exactly which file any given EUI variable lives in. Every component should be imported separately because that reduces the final bundle size.
 
