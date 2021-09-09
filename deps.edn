@@ -7,7 +7,7 @@
   {:extra-paths
    ["bin"]
    :extra-deps
-   {org.clojure/clojure                 {:mvn/version "1.10.2-alpha1"}
+   {org.clojure/clojure                 {:mvn/version "1.10.3"}
     cheshire/cheshire                   {:mvn/version "5.10.1"}
     camel-snake-kebab/camel-snake-kebab {:mvn/version "0.4.2"}}}
 
