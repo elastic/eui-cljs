@@ -7,6 +7,8 @@
 
 (def BREAKPOINTS eui/BREAKPOINTS)
 
+(def isWithinMinBreakpoint eui/isWithinMinBreakpoint)
+
 (def isWithinMaxBreakpoint eui/isWithinMaxBreakpoint)
 
 (def getBreakpoint eui/getBreakpoint)

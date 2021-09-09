@@ -3,6 +3,8 @@
 
 (def getDetailsForSchema eui/getDetailsForSchema)
 
+(def defaultComparator eui/defaultComparator)
+
 (def useDetectSchema eui/useDetectSchema)
 
 (def schemaDetectors eui/schemaDetectors)

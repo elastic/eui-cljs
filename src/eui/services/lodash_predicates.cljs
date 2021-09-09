@@ -7,6 +7,8 @@
 
 (def isArray eui/isArray)
 
+(def isObject eui/isObject)
+
 (def isNaN eui/isNaN)
 
 (def isBoolean eui/isBoolean)
