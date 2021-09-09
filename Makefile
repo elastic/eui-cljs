@@ -1,12 +1,12 @@
 .PHONY: repl
 repl:
-	clojure -A:bin:repl
+	clojure -M:bin:repl
 
 .PHONY: generate
 generate:
 	yarn
 	rm -rf src/eui
-	clojure -A:bin:generate
+	clojure -M:bin:generate
 
 .PHONY: clean
 clean:
@@ -14,5 +14,5 @@ clean:
 	rm -rf .cpcache
 
 .PHONY: release
-release: generate
-	clj -A:release
+release:
+	clj -M:release
