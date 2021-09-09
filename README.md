@@ -94,3 +94,27 @@ Steps are currently:
 - Run `make generate` from the root of the project
 - Update the EUI version in `src/deps.cljs` so projects using this will install the correct version we're using
 - Commit and submit a pull request
+
+### Deploy to Clojars
+
+Make sure `CLOJARS_USERNAME` and `CLOJARS_PASSWORD` environment variables are set
+(unless you are passing in `--clojars-username` and `--clojars-password` directly).
+For example, add the following to your `~/.bashrc` or `~/.zshrc` or equivalent:
+
+```sh
+export CLOJARS_USERNAME="XYZ"
+export CLOJARS_PASSWORD="XYZ"
+```
+
+Create an initial version tag (if you haven't already)
+
+```sh
+git tag v0.1.0
+```
+
+Release a new version (tag + pom + jar + deploy):
+
+```sh
+make release
+```
+
