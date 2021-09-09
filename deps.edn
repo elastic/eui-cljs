@@ -1,6 +1,6 @@
 {:paths ["src"]
 
- :deps {org.clojure/clojurescript {:mvn/version "1.10.597"}}
+ :deps {org.clojure/clojurescript {:mvn/version "1.10.879"}}
 
  :aliases
  {:bin
