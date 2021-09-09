@@ -1,5 +1,7 @@
-(ns eui.use-i-18n-complete-step
+(ns eui.use-i-18n-current-step
   (:require ["@elastic/eui/lib/components/steps/step_strings.js" :as eui]))
+
+(def useI18nCurrentStep eui/useI18nCurrentStep)
 
 (def useI18nCompleteStep eui/useI18nCompleteStep)
 

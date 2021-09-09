@@ -3,11 +3,7 @@
 
 (def parseColor eui/parseColor)
 
-(def useMouseMove eui/useMouseMove)
-
 (def getFixedLinearGradient eui/getFixedLinearGradient)
-
-(def isMouseEvent eui/isMouseEvent)
 
 (def HEX eui/HEX)
 
@@ -22,5 +18,3 @@
 (def chromaValid eui/chromaValid)
 
 (def HSV eui/HSV)
-
-(def throttle eui/throttle)
