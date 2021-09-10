@@ -56,6 +56,10 @@ What it looks like to use this library:
 
 We are also able to overwrite certain components without the end-developer's knowledge which keeps the experience unified. For example we needed to port the text field components so they would compatible with Reagent's async-rendering. Those components live in the overrwrites directory.
 
+## Theming
+
+To keep things self contained within this library, the `eui.theme` namespace has a `themes` variable which contains the raw CSS and an JSON->EDN conversion of the variables for a given theme. In your project you may want to chuck the `(-> themes :dark :css)` into a `<style></style>` and then use the `(-> themes :dark :values)` map inside of components co-located styling. I use this strategy in place of externally requiring the EUI CSS file from a `public` directory on my server.
+
 ## Note on Icons
 
 The Google Closure Compiler, advanced as it is, does not currently support async Javascript imports which EUI utilizes heavily for rendering icons in components. The work around involves calling their escape-hatch `appendIconComponentCache` function with a resolver map like:
