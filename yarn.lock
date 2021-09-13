@@ -9,10 +9,10 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
-"@elastic/eui@37.6.2":
-  version "37.6.2"
-  resolved "https://registry.yarnpkg.com/@elastic/eui/-/eui-37.6.2.tgz#a10523a621ea05f2a7dda2ddb2f97caf6d0266ef"
-  integrity sha512-NI1kx4/IC0qK0YvGMWCrRVFCIKH9zFkVmaew0fhlhf456RTNfJ+YrDToV96zfqSrN0oKcF67c24Y4MbaG/EYdA==
+"@elastic/eui@37.7.0":
+  version "37.7.0"
+  resolved "https://registry.yarnpkg.com/@elastic/eui/-/eui-37.7.0.tgz#cbb9a2a085e8e4c9d23b08b4ae2dd85f53275c6d"
+  integrity sha512-Op68BOGue4anWPlz+suxkNXUun8G/Se1YVODEFZSv9ph1NTVHvIpDzQq7vKpEOfPKv9z+zo5+UZsPyaboq7f6Q==
   dependencies:
     "@types/chroma-js" "^2.0.0"
     "@types/lodash" "^4.14.160"

@@ -32,7 +32,7 @@ This table maps variable names to the file on disk. So if you need to just manua
 | `useDataGridColumnSelector` | `eui.use-data-grid-column-selector` | `node_modules/@elastic/eui/lib/components/datagrid/column_selector.js` |
 | `EuiDataGridCellPopover` | `eui.data-grid-cell-popover` | `node_modules/@elastic/eui/lib/components/datagrid/body/data_grid_cell_popover.js` |
 | `EuiDataGridCellButtons` | `eui.data-grid-cell-buttons` | `node_modules/@elastic/eui/lib/components/datagrid/body/data_grid_cell_buttons.js` |
-| `VIRTUALIZED`<br>`EuiDataGridBody` | `eui.data-grid-body` | `node_modules/@elastic/eui/lib/components/datagrid/body/data_grid_body.js` |
+| `VIRTUALIZED`<br>`EuiDataGridBody`<br>`getParentCellContent` | `eui.data-grid-body` | `node_modules/@elastic/eui/lib/components/datagrid/body/data_grid_body.js` |
 | `EuiDataGridFooterRow` | `eui.data-grid-footer-row` | `node_modules/@elastic/eui/lib/components/datagrid/body/data_grid_footer_row.js` |
 | `providedPopoverContents`<br>`DefaultColumnFormatter` | `eui.provided-popover-contents` | `node_modules/@elastic/eui/lib/components/datagrid/body/popover_utils.js` |
 | `EuiDataGridCell` | `eui.data-grid-cell` | `node_modules/@elastic/eui/lib/components/datagrid/body/data_grid_cell.js` |
@@ -880,6 +880,6 @@ This table maps variable names to the file on disk. So if you need to just manua
 | `accessibleClickKeys` | `eui.services.accessible-click-keys` | `node_modules/@elastic/eui/lib/services/accessibility/accessible_click_keys.js` |
 | `comboBoxKeys` | `eui.services.combo-box-keys` | `node_modules/@elastic/eui/lib/services/accessibility/combo_box_keys.js` |
 | `cascadingMenuKeys` | `eui.services.cascading-menu-keys` | `node_modules/@elastic/eui/lib/services/accessibility/cascading_menu_keys.js` |
-| `htmlIdGenerator` | `eui.services.html-id-generator` | `node_modules/@elastic/eui/lib/services/accessibility/html_id_generator.js` |
+| `htmlIdGenerator`<br>`useGeneratedHtmlId` | `eui.services.html-id-generator` | `node_modules/@elastic/eui/lib/services/accessibility/html_id_generator.js` |
 | `BREAKPOINT`<br>`isWithinBreakpoints`<br>`BREAKPOINTS`<br>`isWithinMinBreakpoint`<br>`isWithinMaxBreakpoint`<br>`getBreakpoint` | `eui.services.breakpoint` | `node_modules/@elastic/eui/lib/services/breakpoint.js` |
 | `warnOnce` | `eui.services.warn-once` | `node_modules/@elastic/eui/lib/services/console/warn_once.js` |

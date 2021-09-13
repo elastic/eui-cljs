@@ -135,7 +135,7 @@
 (defn update-release []
   (let [{:keys [version]} (json/parse-string (slurp "package.json") true)
         release (edn/read-string (slurp "release.edn"))]
-    (pp/pprint (assoc release :version version)
+    (pp/pprint (assoc release :version (str version "-SNAPSHOT"))
                (io/writer "release.edn"))))
 
 (defn -main []
