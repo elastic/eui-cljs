@@ -94,10 +94,17 @@ Check the [pr](https://github.com/elastic/eui/pull/3481) and the [issue](https:/
 
 Steps are currently:
 
+### Generate a candidate -SNAPSHOT release
 - Update the version of EUI in the `package.json` file
-- Run `make generate` from the root of the project
 - Update the EUI version in `src/deps.cljs` so projects using this will install the correct version we're using
+- Run `make generate` from the root of the project
 - Commit and submit a pull request
+- Run `make release` to deploy the -SNAPSHOT version
+- Test to verify all is okay
+
+### Promote to actual version
+- Remove -SNAPSHOT from `release.edn`
+- Run `make release`
 
 ### Deploy to Clojars
 
