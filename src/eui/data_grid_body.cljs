@@ -4,3 +4,5 @@
 (def VIRTUALIZED eui/VIRTUALIZED)
 
 (def EuiDataGridBody eui/EuiDataGridBody)
+
+(def getParentCellContent eui/getParentCellContent)
