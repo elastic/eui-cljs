@@ -6,6 +6,6 @@
   "license": "Apache 2.0",
   "private": false,
   "dependencies": {
-    "@elastic/eui": "37.7.0"
+    "@elastic/eui": "39.1.1"
   }
 }
