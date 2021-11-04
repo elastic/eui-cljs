@@ -3,4 +3,6 @@
 
 (def nodeToHtml eui/nodeToHtml)
 
+(def parseLineRanges eui/parseLineRanges)
+
 (def highlightByLine eui/highlightByLine)

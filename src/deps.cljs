@@ -1,4 +1,4 @@
-{:npm-deps {"@elastic/eui" "37.7.0"
+{:npm-deps {"@elastic/eui" "41.0.0"
             "@elastic/datemath" "^5.0.3"
             "classnames" "^2.2.6"
             "moment" "^2.27.0"
