@@ -1,0 +1,9 @@
+;; shadow-cljs configuration
+{:deps true ;; using deps for the :local/root capability
+
+ :dev-http {3333 "public"}
+
+ :builds
+ {:app
+  {:target :browser
+   :modules {:main {:init-fn sample-app.core/init}}}}}

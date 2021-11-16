@@ -1,0 +1,22 @@
+{
+  "name": "sample-app",
+  "version": "0.0.1",
+  "private": true,
+  "devDependencies": {
+    "shadow-cljs": "2.15.12"
+  },
+  "scripts": {
+    "start": "shadow-cljs watch app",
+    "report": "shadow-cljs run shadow.cljs.build-report app public/build_report.html"
+  },
+  "dependencies": {
+    "@elastic/datemath": "^5.0.3",
+    "@elastic/eui": "41.0.0",
+    "classnames": "^2.2.6",
+    "moment": "^2.27.0",
+    "prop-types": "^15.6.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "typescript": "4.0.5"
+  }
+}
