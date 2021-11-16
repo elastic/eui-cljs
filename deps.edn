@@ -1,15 +1,15 @@
 {:paths ["src"]
 
- :deps {org.clojure/clojurescript {:mvn/version "1.10.879"}}
+ :deps {org.clojure/clojurescript {:mvn/version "1.10.879"}
+        org.clojure/clojure {:mvn/version "1.10.3"}
+        cheshire/cheshire {:mvn/version "5.10.1"}}
 
  :aliases
  {:bin
   {:extra-paths
    ["bin"]
    :extra-deps
-   {org.clojure/clojure                 {:mvn/version "1.10.3"}
-    cheshire/cheshire                   {:mvn/version "5.10.1"}
-    camel-snake-kebab/camel-snake-kebab {:mvn/version "0.4.2"}}}
+   {camel-snake-kebab/camel-snake-kebab {:mvn/version "0.4.2"}}}
 
   :repl
   {:main-opts ["-m" "nrepl.cmdline"]}

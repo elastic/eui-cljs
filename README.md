@@ -1,4 +1,4 @@
-# A Clojurescript wrapper for EUI v[41.0.0](https://elastic.github.io/eui/#/package/changelog)
+# A Clojurescript wrapper for EUI v[41.1.0](https://elastic.github.io/eui/#/package/changelog)
 
 Smooths out the experience of using EUI from Clojurescript.
 
@@ -7,8 +7,7 @@ Smooths out the experience of using EUI from Clojurescript.
 ## Quickstart
 
 * Add `elastic/eui-cljs` to your project
-* Add the [Cheshire](https://github.com/dakrone/cheshire) dependency to your project
-  - Our theme macro uses it to generate an EDN map of theme values, won't increase bundle size
+* `npm install -g yarn` EUI Requires yarn
 * Call `(eui.theme/init!)` in your application's main function
 
 Check out the sample application in the `examples` directory to get a feel for how to use it, and then head over to the [official EUI docs site](https://eui.elastic.co/) to start learning!
@@ -68,8 +67,6 @@ What it looks like to use this library:
 We are also able to overwrite certain components without the end-developer's knowledge which keeps the experience unified. For example we needed to port the text field components so they would compatible with Reagent's async-rendering. Those components live in the overrwrites directory.
 
 ## Styling/Theming
-
-We have macros which load in CSS and JSON and they use [Cheshire JSON](https://github.com/dakrone/cheshire) So you'll need to add that dependency to your project. It won't increase the final bundle size. 
 
 The sample application in the examples directory uses the following strategy:
 

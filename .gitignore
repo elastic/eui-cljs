@@ -3,3 +3,5 @@ node_modules
 pom.xml
 target
 .nrepl-port
+.clj-kondo
+.lsp
