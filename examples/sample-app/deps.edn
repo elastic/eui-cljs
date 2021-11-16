@@ -1,0 +1,6 @@
+{:paths ["src"]
+
+ :deps {thheller/shadow-cljs {:mvn/version "2.15.6"}
+        reagent/reagent {:mvn/version "1.0.0"}
+        cheshire/cheshire {:mvn/version "5.10.1"}
+        co.elastic/eui-cljs {:local/root "../../"}}}

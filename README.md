@@ -4,9 +4,22 @@ Smooths out the experience of using EUI from Clojurescript.
 
 [![Clojars Project](https://img.shields.io/clojars/v/co.elastic/eui-cljs.svg)](https://clojars.org/co.elastic/eui-cljs)
 
+## Quickstart
+
+* Add `elastic/eui-cljs` to your project
+* Add the [Cheshire](https://github.com/dakrone/cheshire) dependency to your project
+  - Our theme macro uses it to generate an EDN map of theme values, won't increase bundle size
+* Call `(eui.theme/init!)` in your application's main function
+
+Check out the sample application in the `examples` directory to get a feel for how to use it, and then head over to the [official EUI docs site](https://eui.elastic.co/) to start learning!
+
+When in doubt, view the [components table](./components.md) to see exactly where we are mapping variables you come across.
+
+## Motivation
+
 It's currently difficult to track down exactly which file any given EUI variable lives in. Every component should be imported separately because that reduces the final bundle size.
 
-For instance, when checking out [the EUI docs site](https://elastic.github.io/eui/#/), you'll come across example code like this:
+For instance, when checking out [the EUI docs site](https://eui.elastic.co), you'll come across example code like this:
 
 ```javascript
 import {
@@ -20,7 +33,7 @@ import {
 } from '@elastic/eui';
 ```
 
-When importing directly from EUI, the import section looks like:
+When importing directly from `node_modules/@elastic/eui`, the import section looks like:
 
 ```clojure
 (ns cake.core
@@ -50,15 +63,18 @@ What it looks like to use this library:
             [eui.select :refer [EuiSelect]]
             [eui.text-area :refer [EuiTextArea]]
             [eui.horizontal-rule :refer [EuiHorizontalRule]]
-            [eui.loading-spinner :refer [EuiLoadingSpinner]]
-            [eui.text :refer [EuiText]]))
 ```
 
 We are also able to overwrite certain components without the end-developer's knowledge which keeps the experience unified. For example we needed to port the text field components so they would compatible with Reagent's async-rendering. Those components live in the overrwrites directory.
 
-## Theming
+## Styling/Theming
 
-To keep things self contained within this library, the `eui.theme` namespace has a `themes` variable which contains the raw CSS and an JSON->EDN conversion of the variables for a given theme. In your project you may want to chuck the `(-> themes :dark :css)` into a `<style></style>` and then use the `(-> themes :dark :values)` map inside of components co-located styling. I use this strategy in place of externally requiring the EUI CSS file from a `public` directory on my server.
+We have macros which load in CSS and JSON and they use [Cheshire JSON](https://github.com/dakrone/cheshire) So you'll need to add that dependency to your project. It won't increase the final bundle size. 
+
+The sample application in the examples directory uses the following strategy:
+
+* In the application's main function call `(eui.theme/init!)`, This will add the required styles and fonts to the head of your document.
+* You can use `(eui.theme/set-theme! (or :dark :light))` to set the correct styles, like in an event handler
 
 ## Note on Icons
 
@@ -129,3 +145,9 @@ Release a new version (tag + pom + jar + deploy):
 make release
 ```
 
+## License
+
+[Dual-licensed under Elastic v2 and Server Side Public License, v 1][license] Read the [FAQ][faq] for details.
+
+[license]: LICENSE.txt
+[faq]: https://github.com/elastic/eui/blob/main/FAQ.md
