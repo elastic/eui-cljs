@@ -11,4 +11,6 @@
 
 (def appendIconComponentCache eui/appendIconComponentCache)
 
+(def isNamedColor eui/isNamedColor)
+
 (def COLORS eui/COLORS)

@@ -1,11 +1,11 @@
 {
   "name": "eui-cljs",
-  "version": "41.0.0",
+  "version": "41.1.0",
   "description": "Auto generated wrapper around EUI files",
   "author": "Ryan Haywood",
-  "license": "Apache 2.0",
+  "license": "SEE LICENSE IN LICENSE.txt",
   "private": false,
   "dependencies": {
-    "@elastic/eui": "41.0.0"
+    "@elastic/eui": "41.1.0"
   }
 }

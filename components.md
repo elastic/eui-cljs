@@ -11,6 +11,7 @@ This table maps variable names to the file on disk. So if you need to just manua
 | `findTestSubject` | `eui.test.find-test-subject` | `node_modules/@elastic/eui/lib/test/find_test_subject.js` |
 | `timeExecution`<br>`benchmarkFunction` | `eui.test.time-execution` | `node_modules/@elastic/eui/lib/test/time_execution.js` |
 | `sleep` | `eui.test.sleep` | `node_modules/@elastic/eui/lib/test/sleep.js` |
+| `IS` | `eui.test.is-jest` | `node_modules/@elastic/eui/lib/test/is_jest.js` |
 | `useBottomShadowLarge`<br>`useSlightShadowActive`<br>`useBottomShadow`<br>`useBottomShadowMedium`<br>`useSlightShadow`<br>`useBottomShadowFlat`<br>`useBottomShadowSmall`<br>`useSlightShadowHover`<br>`useOverflowShadow` | `eui.global.shadow` | `node_modules/@elastic/eui/lib/global_styling/mixins/_shadow.js` |
 | `useYScrollWithShadows`<br>`useCanAnimate`<br>`useScrollBar`<br>`useXScroll`<br>`useInnerBorder`<br>`useXScrollWithShadows`<br>`useScreenReaderOnly`<br>`useYScroll` | `eui.global.helpers` | `node_modules/@elastic/eui/lib/global_styling/mixins/_helpers.js` |
 | `border` | `eui.global.borders` | `node_modules/@elastic/eui/lib/global_styling/variables/_borders.js` |
@@ -27,13 +28,14 @@ This table maps variable names to the file on disk. So if you need to just manua
 | `is` | `eui.utils.is` | `node_modules/@elastic/eui/lib/utils/prop_types/is.js` |
 | `withRequiredProp` | `eui.utils.with-required-prop` | `node_modules/@elastic/eui/lib/utils/prop_types/with_required_prop.js` |
 | `paddingSizeToClassNameMap`<br>`EuiBottomBar`<br>`POSITIONS` | `eui.bottom-bar` | `node_modules/@elastic/eui/lib/components/bottom_bar/bottom_bar.js` |
-| `mockRowHeightUtils` | `eui.mock-row-height-utils` | `node_modules/@elastic/eui/lib/components/datagrid/__mocks__/row_height_utils.js` |
+| `mockRowHeightUtils`<br>`RowHeightUtils` | `eui.mock-row-height-utils` | `node_modules/@elastic/eui/lib/components/datagrid/__mocks__/row_height_utils.js` |
 | `EuiDataGridInMemoryRenderer` | `eui.data-grid-in-memory-renderer` | `node_modules/@elastic/eui/lib/components/datagrid/data_grid_inmemory_renderer.js` |
 | `EuiDataGrid` | `eui.data-grid` | `node_modules/@elastic/eui/lib/components/datagrid/data_grid.js` |
 | `EuiDataGridCellPopover` | `eui.data-grid-cell-popover` | `node_modules/@elastic/eui/lib/components/datagrid/body/data_grid_cell_popover.js` |
 | `EuiDataGridCellButtons` | `eui.data-grid-cell-buttons` | `node_modules/@elastic/eui/lib/components/datagrid/body/data_grid_cell_buttons.js` |
 | `VIRTUALIZED`<br>`EuiDataGridBody`<br>`getParentCellContent`<br>`Cell` | `eui.data-grid-body` | `node_modules/@elastic/eui/lib/components/datagrid/body/data_grid_body.js` |
 | `EuiDataGridFooterRow` | `eui.data-grid-footer-row` | `node_modules/@elastic/eui/lib/components/datagrid/body/data_grid_footer_row.js` |
+| `makeRowManager` | `eui.make-row-manager` | `node_modules/@elastic/eui/lib/components/datagrid/body/data_grid_row_manager.js` |
 | `providedPopoverContents`<br>`DefaultColumnFormatter` | `eui.provided-popover-contents` | `node_modules/@elastic/eui/lib/components/datagrid/body/popover_utils.js` |
 | `EuiDataGridCell` | `eui.data-grid-cell` | `node_modules/@elastic/eui/lib/components/datagrid/body/data_grid_cell.js` |
 | `EuiDataGridColumnResizer` | `eui.data-grid-column-resizer` | `node_modules/@elastic/eui/lib/components/datagrid/body/header/data_grid_column_resizer.js` |
@@ -49,7 +51,7 @@ This table maps variable names to the file on disk. So if you need to just manua
 | `EuiDataGridToolbar`<br>`checkOrDefaultToolBarDisplayOptions` | `eui.data-grid-toolbar` | `node_modules/@elastic/eui/lib/components/datagrid/controls/data_grid_toolbar.js` |
 | `getDetailsForSchema`<br>`defaultComparator`<br>`useDetectSchema`<br>`schemaDetectors`<br>`useMergedSchema` | `eui.get-details-for-schema` | `node_modules/@elastic/eui/lib/components/datagrid/data_grid_schema.js` |
 | `EuiDataGridPaginationRenderer` | `eui.data-grid-pagination-renderer` | `node_modules/@elastic/eui/lib/components/datagrid/data_grid_pagination.js` |
-| `AUTO`<br>`RowHeightUtils` | `eui.auto` | `node_modules/@elastic/eui/lib/components/datagrid/row_height_utils.js` |
+| `cellPaddingsMap`<br>`AUTO`<br>`RowHeightUtils`<br>`DEFAULT` | `eui.cell-paddings-map` | `node_modules/@elastic/eui/lib/components/datagrid/row_height_utils.js` |
 | `DataGridSortingContext`<br>`DataGridWrapperRowsContext`<br>`DataGridFocusContext` | `eui.data-grid-sorting-context` | `node_modules/@elastic/eui/lib/components/datagrid/data_grid_context.js` |
 | `EuiSuggest` | `eui.suggest` | `node_modules/@elastic/eui/lib/components/suggest/suggest.js` |
 | `DISPLAYS`<br>`EuiSuggestItem`<br>`COLORS` | `eui.suggest-item` | `node_modules/@elastic/eui/lib/components/suggest/suggest_item.js` |
@@ -198,7 +200,7 @@ This table maps variable names to the file on disk. So if you need to just manua
 | `EuiAccordion`<br>`PADDING` | `eui.accordion` | `node_modules/@elastic/eui/lib/components/accordion/accordion.js` |
 | `EuiOverlayMask` | `eui.overlay-mask` | `node_modules/@elastic/eui/lib/components/overlay_mask/overlay_mask.js` |
 | `TEXT`<br>`EuiHealth` | `eui.health` | `node_modules/@elastic/eui/lib/components/health/health.js` |
-| `EuiEmptyPrompt` | `eui.empty-prompt` | `node_modules/@elastic/eui/lib/components/empty_prompt/empty_prompt.js` |
+| `PADDING`<br>`EuiEmptyPrompt` | `eui.empty-prompt` | `node_modules/@elastic/eui/lib/components/empty_prompt/empty_prompt.js` |
 | `SIDES`<br>`EuiGlobalToastList`<br>`TOAST` | `eui.global-toast-list` | `node_modules/@elastic/eui/lib/components/toast/global_toast_list.js` |
 | `EuiGlobalToastListItem` | `eui.global-toast-list-item` | `node_modules/@elastic/eui/lib/components/toast/global_toast_list_item.js` |
 | `EuiToast`<br>`COLORS` | `eui.toast` | `node_modules/@elastic/eui/lib/components/toast/toast.js` |
@@ -309,7 +311,7 @@ This table maps variable names to the file on disk. So if you need to just manua
 | `TEXT`<br>`EuiText` | `eui.text` | `node_modules/@elastic/eui/lib/components/text/text.js` |
 | `EuiExpression`<br>`COLORS` | `eui.expression` | `node_modules/@elastic/eui/lib/components/expression/expression.js` |
 | `EuiDelayHide` | `eui.delay-hide` | `node_modules/@elastic/eui/lib/components/delay_hide/delay_hide.js` |
-| `SIZES`<br>`EuiIcon`<br>`clearIconComponentCache`<br>`TYPES`<br>`appendIconComponentCache`<br>`COLORS` | `eui.icon` | `node_modules/@elastic/eui/lib/components/icon/icon.js` |
+| `SIZES`<br>`EuiIcon`<br>`clearIconComponentCache`<br>`TYPES`<br>`appendIconComponentCache`<br>`isNamedColor`<br>`COLORS` | `eui.icon` | `node_modules/@elastic/eui/lib/components/icon/icon.js` |
 | `editorDistributeVertical` | `eui.icon-editor-distribute-vertical` | `node_modules/@elastic/eui/lib/components/icon/assets/editorDistributeVertical.js` |
 | `reporter` | `eui.icon-reporter` | `node_modules/@elastic/eui/lib/components/icon/assets/reporter.js` |
 | `stop` | `eui.icon-stop` | `node_modules/@elastic/eui/lib/components/icon/assets/stop.js` |
@@ -660,6 +662,7 @@ This table maps variable names to the file on disk. So if you need to just manua
 | `tokenMethod` | `eui.icon-token-method` | `node_modules/@elastic/eui/lib/components/icon/assets/tokenMethod.js` |
 | `editorAlignLeft` | `eui.icon-editor-align-left` | `node_modules/@elastic/eui/lib/components/icon/assets/editor_align_left.js` |
 | `menu` | `eui.icon-menu` | `node_modules/@elastic/eui/lib/components/icon/assets/menu.js` |
+| `analyzeEvent` | `eui.icon-analyze-event` | `node_modules/@elastic/eui/lib/components/icon/assets/analyzeEvent.js` |
 | `logoDropwizard` | `eui.icon-logo-dropwizard` | `node_modules/@elastic/eui/lib/components/icon/assets/logo_dropwizard.js` |
 | `faceSad` | `eui.icon-face-sad` | `node_modules/@elastic/eui/lib/components/icon/assets/face_sad.js` |
 | `appAgent` | `eui.icon-app-agent` | `node_modules/@elastic/eui/lib/components/icon/assets/app_agent.js` |
