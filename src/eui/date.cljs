@@ -7,4 +7,6 @@
 
 (def toRelativeString eui/toRelativeString)
 
+(def INVALID eui/INVALID)
+
 (def getDateMode eui/getDateMode)

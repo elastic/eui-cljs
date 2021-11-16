@@ -6,3 +6,5 @@
 (def EuiDataGridBody eui/EuiDataGridBody)
 
 (def getParentCellContent eui/getParentCellContent)
+
+(def Cell eui/Cell)
