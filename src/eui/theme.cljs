@@ -4,18 +4,16 @@
 
 (def default :dark)
 
-(def inter-href "https://rsms.me/inter/inter-ui.css")
-(def font-href "https://fonts.googleapis.com/css?family=Roboto+Mono:400,400i,700,700i")
-(def amsterdam-font-href "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap")
+(def font-href "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap")
 
 (def themes
   {:light
-   {:css (load-file "dist/eui_theme_light.min.css")
-    :values (load-json "dist/eui_theme_light.json")}
+   {:css (load-file "dist/eui_theme_amsterdam_light.min.css")
+    :values (load-json "dist/eui_theme_amsterdam_light.json")}
 
    :dark
-   {:css (load-file "dist/eui_theme_dark.min.css")
-    :values (load-json "dist/eui_theme_dark.json")}})
+   {:css (load-file "dist/eui_theme_amsterdam_dark.min.css")
+    :values (load-json "dist/eui_theme_amsterdam_dark.json")}})
 
 (defn next-theme
   "Returns the opposite theme for the current value
@@ -29,16 +27,12 @@
    which load the Inter font and styling"
   []
   (let [head (.querySelector js/document "head")
-        font-link (gdom/createElement "link")
-        inter-link (gdom/createElement "link")]
+        font-link (gdom/createElement "link")]
     (if head
       (do
         (gdom/setProperties font-link #js {"rel" "stylesheet"
                                            "href" font-href})
-        (gdom/setProperties inter-link #js {"rel" "stylesheet"
-                                            "href" inter-href})
-        (gdom/appendChild head font-link)
-        (gdom/appendChild head inter-link))
+        (gdom/appendChild head font-link))
       (throw (js/Error. "load-fonts! error: No <head></head> element found for <link> elements")))))
 
 (defn set-theme!
