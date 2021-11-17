@@ -1,6 +1,6 @@
 {:paths ["src"]
 
- :deps {org.clojure/clojurescript {:mvn/version "1.10.879"}
+ :deps {org.clojure/clojurescript {:mvn/version "1.10.893"}
         org.clojure/clojure {:mvn/version "1.10.3"}
         cheshire/cheshire {:mvn/version "5.10.1"}}
 
