@@ -12,11 +12,11 @@ Smooths out the experience of using EUI from Clojurescript.
 
 Check out the sample application in the `examples` directory to get a feel for how to use it, and then head over to the [official EUI docs site](https://eui.elastic.co/) to start learning!
 
-When in doubt, view the [components table](./components.md) to see exactly where we are mapping variables you come across.
+There is a formula for importing components you might be looking at in the [docs](https://eui.elastic.co/). Given an EUI component, something like `EuiLoadingSpinner`, the namespace always starts with `eui.` and then convert the PascalCase name to kebab-case `eui.loading-spinner` followed by a `:refer` using the original component name. Putting it all together `<EuiLoadingSpinner />` => `[eui.loading-spinner :refer [EuiLoadingSpinner]]`. If for some reason that doesn't work, view the [components table](./components.md) to see exactly where we are mapping variables you come across.
 
 ## Motivation
 
-It's currently difficult to track down exactly which file any given EUI variable lives in. Every component should be imported separately because that reduces the final bundle size.
+It's critical you import individual components to ensure your final bundle only includes code you rely on. Going down that path, you'll start to feel the friction of having to track down exactly which file any given EUI variable lives in.
 
 For instance, when checking out [the EUI docs site](https://eui.elastic.co), you'll come across example code like this:
 
@@ -32,7 +32,7 @@ import {
 } from '@elastic/eui';
 ```
 
-When importing directly from `node_modules/@elastic/eui`, the import section looks like:
+When importing directly from `node_modules/@elastic/eui` (without this library), the import section looks like:
 
 ```clojure
 (ns cake.core
@@ -47,9 +47,9 @@ When importing directly from `node_modules/@elastic/eui`, the import section loo
             ["@elastic/eui/lib/components/text" :refer [EuiText]]))
 ```
 
-There's not a convention for where a variable lives, so often you need to grep through the directory to find where the variable lives, and it can be tedious and frustrating after regular use.
+Because the path isn't related to the component name, you will need to grep through the directory to find where the variable lives which quickly becomes tedious and painful.
 
-This project automates the generation of a Clojurescript wrapper which creates namespaces for each component in EUI. It also generates a [components table](./components.md) that maps variable names to their original file on disk, and the Clojurescript namespace that they live in.
+This project automates the generation of a Clojurescript wrapper which creates namespaces for each component in EUI with a predictable namespace that maps to the component name (`EuiPageBodyContent => eui.page-body-content`). It also generates a [components table](./components.md) that maps variable names to their original file on disk, and the Clojurescript namespace that they live in.
 
 What it looks like to use this library:
 
@@ -64,7 +64,7 @@ What it looks like to use this library:
             [eui.horizontal-rule :refer [EuiHorizontalRule]]
 ```
 
-We are also able to overwrite certain components without the end-developer's knowledge which keeps the experience unified. For example we needed to port the text field components so they would compatible with Reagent's async-rendering. Those components live in the overrwrites directory.
+We are also able to overwrite certain components without the end-developer's knowledge which keeps the experience unified. For example, we needed to port the text field components so they would be compatible with Reagent's async-rendering. Those components live in the overwrites directory.
 
 ## Styling/Theming
 
@@ -102,45 +102,6 @@ The Google Closure Compiler, advanced as it is, does not currently support async
 And then import the namespace so the `appendIconComponentCache` functions runs on app starup.
 
 Check the [pr](https://github.com/elastic/eui/pull/3481) and the [issue](https://github.com/elastic/eui/issues/2973) explaining things further.
-
-## How to bump the version of EUI and re-generate the library
-
-Steps are currently:
-
-### Generate a candidate -SNAPSHOT release
-- Update the version of EUI in the `package.json` file
-- Update the EUI version in `src/deps.cljs` so projects using this will install the correct version we're using
-- Run `make generate` from the root of the project
-- Commit and submit a pull request
-- Run `make release` to deploy the -SNAPSHOT version
-- Test to verify all is okay
-
-### Promote to actual version
-- Remove -SNAPSHOT from `release.edn`
-- Run `make release`
-
-### Deploy to Clojars
-
-Make sure `CLOJARS_USERNAME` and `CLOJARS_PASSWORD` environment variables are set
-(unless you are passing in `--clojars-username` and `--clojars-password` directly).
-For example, add the following to your `~/.bashrc` or `~/.zshrc` or equivalent:
-
-```sh
-export CLOJARS_USERNAME="XYZ"
-export CLOJARS_PASSWORD="XYZ"
-```
-
-Create an initial version tag (if you haven't already)
-
-```sh
-git tag v0.1.0
-```
-
-Release a new version (tag + pom + jar + deploy):
-
-```sh
-make release
-```
 
 ## License
 
