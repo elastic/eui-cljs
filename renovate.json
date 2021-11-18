@@ -1,7 +1,0 @@
-{
-    "packageRules": [
-        {
-            "matchPackageNames": ["@elastic/eui"]
-        }
-    ]
-}
