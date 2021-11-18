@@ -6,6 +6,6 @@
   "license": "SEE LICENSE IN LICENSE.txt",
   "private": false,
   "dependencies": {
-    "@elastic/eui": "41.1.0"
+    "@elastic/eui": "41.2.0"
   }
 }
