@@ -1,12 +1,17 @@
 .PHONY: repl
 repl:
-	clojure -M:bin:repl
+	clojure -M:scripts:repl
 
 .PHONY: generate
 generate:
+	git checkout main
+	clojure -M:scripts:update-deps $(VERSION)
 	yarn
 	rm -rf src/eui
-	clojure -M:bin:generate
+	clojure -M:scripts:generate
+	git checkout -b "v${VERSION}-RC"
+	git commit -am "EUI v${VERSION} Release candidate"
+	git push origin "v${VERSION}-RC"
 
 .PHONY: clean
 clean:
