@@ -3,6 +3,8 @@
 
 (def EuiPopover eui/EuiPopover)
 
+(def popoverAnchorPosition eui/popoverAnchorPosition)
+
 (def ANCHOR eui/ANCHOR)
 
 (def DISPLAY eui/DISPLAY)
