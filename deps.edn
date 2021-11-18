@@ -5,7 +5,7 @@
         cheshire/cheshire {:mvn/version "5.10.1"}}
 
  :aliases
- {:bin
+ {:scripts
   {:extra-paths
    ["scripts"]
    :extra-deps
@@ -16,6 +16,9 @@
 
   :generate
   {:main-opts ["-m" "generate-lib"]}
+
+  :update-deps
+  {:main-opts ["-m" "update-deps"]}
 
   :release
   {:extra-deps {applied-science/deps-library {:mvn/version "0.4.0"}}
