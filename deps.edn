@@ -7,7 +7,7 @@
  :aliases
  {:bin
   {:extra-paths
-   ["bin"]
+   ["scripts"]
    :extra-deps
    {camel-snake-kebab/camel-snake-kebab {:mvn/version "0.4.2"}}}
 
