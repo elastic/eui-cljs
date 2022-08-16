@@ -9,50 +9,55 @@
 (def root "node_modules/")
 (def dir-name "@elastic/eui/lib")
 
-(defn computed-file-props [{:keys [path exports]}]
-  (let [[_ path]      (re-find #"node_modules/(.+)" path)
-        [_ file-type] (re-find (re-pattern (str dir-name "/([a-z]+)")) path)
-        file-name'    (or (some (fn [export]
-                                  (when (s/starts-with? export "Eui")
-                                    export))
-                                (sort exports))
-                          (first exports))
-        icon?         (= file-name' "icon")
-        component?    (s/starts-with? file-name' "Eui")
-        other?        (and (not icon?) (not component?) (not= "components" file-type))
-        icon-name     (second (re-find #"/([\w\_\-]+)\.js" path))
-        icon-var-name (csk/->camelCase icon-name)
-        file-name     (cond
-                        component?
-                        (second (re-find #"Eui(.+)" file-name'))
+(defn computed-file-props [{:keys [path exports] :as file}]
+  (try
+    (let [[_ path]      (re-find #"node_modules/(.+)" path)
+          [_ file-type] (re-find (re-pattern (str dir-name "/([a-z]+)")) path)
+          file-name'    (or (some (fn [export]
+                                    (when (s/starts-with? export "Eui")
+                                      export))
+                                  (sort exports))
+                            (first exports))
+          icon?         (= file-name' "icon")
+          component?    (or (s/starts-with? file-name' "Eui")
+                            (s/starts-with? file-name' "_Eui"))
+          other?        (and (not icon?) (not component?) (not= "components" file-type))
+          icon-name     (or (second (re-find #"/([\w\_\-]+)\.js" path)) "")
+          icon-var-name (csk/->camelCase icon-name)
+          file-name     (cond
+                          component?
+                          (second (re-find #"Eui(.+)" file-name'))
 
-                        icon?
-                        (str "icon_" icon-name)
+                          icon?
+                          (str "icon_" icon-name)
 
-                        other?
-                        (-> path (s/split #"/") last (s/split #"\.") first)
+                          other?
+                          (-> path (s/split #"/") last (s/split #"\.") first)
 
-                        :else
-                        file-name')
-        kebab-case    (csk/->kebab-case file-name)
-        snake-case    (csk/->snake_case file-name)
-        file          (str "src/eui/" (when other? (str file-type "/")) snake-case ".cljs")
-        out           (str "(ns eui." (when other? (str file-type ".")) kebab-case "\n"
-                           "  (:require [\"" path "\" :as eui]))")
-        out           (concat [out] (mapv #(str "(def " (if icon? icon-var-name %) " eui/" % ")") exports))
-        file-contents (str (s/join "\n\n" out) "\n")]
-    {:file-path     path
-     :file-type     file-type
-     :file-contents file-contents
-     :icon?         icon?
-     :component?    component?
-     :other?        other?
-     :out-path      file
-     :namespace     (str "eui." (when other? (str file-type ".")) kebab-case)
-     :exports       (mapv (fn [export]
-                            (if icon? icon-var-name export)) exports)
-     :kebab-case    kebab-case
-     :snake-case    snake-case}))
+                          :else
+                          file-name')
+          kebab-case    (csk/->kebab-case file-name)
+          snake-case    (csk/->snake_case file-name)
+          file          (str "src/eui/" (when other? (str file-type "/")) snake-case ".cljs")
+          out           (str "(ns eui." (when other? (str file-type ".")) kebab-case "\n"
+                             "  (:require [\"" path "\" :as eui]))")
+          out           (concat [out] (mapv #(str "(def " (if icon? icon-var-name %) " eui/" % ")") exports))
+          file-contents (str (s/join "\n\n" out) "\n")]
+      {:file-path     path
+       :file-type     file-type
+       :file-contents file-contents
+       :icon?         icon?
+       :component?    component?
+       :other?        other?
+       :out-path      file
+       :namespace     (str "eui." (when other? (str file-type ".")) kebab-case)
+       :exports       (mapv (fn [export]
+                              (if icon? icon-var-name export)) exports)
+       :kebab-case    kebab-case
+       :snake-case    snake-case})
+    (catch Throwable e
+      (println (Throwable->map e))
+      (println "failed: " file))))
 
 (defn generate-file [file]
   (let [{:keys [out-path file-contents icon? component?]} (computed-file-props file)]
@@ -68,7 +73,7 @@
     (try
       (let [exports (mapcat
                      (fn [export-line]
-                       (let [exports (->> (re-seq #"exports\.([a-zA-Z0-9]+)" export-line)
+                       (let [exports (->> (re-seq #"exports\.([_a-zA-Z0-9]+)" export-line)
                                           (mapv second))]
                          exports))
                      export-lines)]
@@ -93,8 +98,8 @@
                    acc))
                []
                (line-seq rdr))]
-      (catch Exception e
-        (str "Problem parsing: " file)))))
+      (catch Exception _
+        (str "Problem parsing export line in file: " file)))))
 
 (defn component-files
   ([]
@@ -137,7 +142,7 @@
     (let [files (->> (component-files)
                      (mapv parse-export-line)
                      (mapv parse-exports)
-                     (filterv (comp not nil?)))]
+                     (filterv identity))]
       (generate-component-doc files)
       (doseq [file files]
         (generate-file file))
