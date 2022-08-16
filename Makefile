@@ -9,7 +9,7 @@ generate:
 	yarn
 	rm -rf src/eui
 	clojure -M:scripts:generate
-	git checkout -b "v${VERSION}-RC"
+	#git checkout -b "v${VERSION}-RC"
 	git add .
 	git commit -am "EUI v${VERSION} Release candidate"
 	git push origin "v${VERSION}-RC"
