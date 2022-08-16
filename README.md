@@ -1,6 +1,6 @@
 # A Clojurescript wrapper for EUI v[63.0.0](https://elastic.github.io/eui/#/package/changelog)
 
-Smooths out the experience of using EUI from Clojurescript.
+Smooths out the experience of using EUI from Clojurescript
 
 [![Clojars Project](https://img.shields.io/clojars/v/co.elastic/eui-cljs.svg)](https://clojars.org/co.elastic/eui-cljs)
 
