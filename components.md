@@ -321,7 +321,7 @@ This table maps variable names to the file on disk. So if you need to just manua
 | `EuiCollapsibleNavGroup`<br>`BACKGROUNDS` | `eui.collapsible-nav-group` | `node_modules/@elastic/eui/lib/components/collapsible_nav/collapsible_nav_group/collapsible_nav_group.js` |
 | `EuiCollapsibleNav` | `eui.collapsible-nav` | `node_modules/@elastic/eui/lib/components/collapsible_nav/collapsible_nav.js` |
 | `EuiPopoverFooter` | `eui.popover-footer` | `node_modules/@elastic/eui/lib/components/popover/popover_footer.js` |
-| `euiPopoverPanelStyles` | `eui.eui-popover-panel-styles` | `node_modules/@elastic/eui/lib/components/popover/popover_panel/_popover_panel.styles.js` |
+| `openAnimationTiming`<br>`euiPopoverPanelStyles` | `eui.open-animation-timing` | `node_modules/@elastic/eui/lib/components/popover/popover_panel/_popover_panel.styles.js` |
 | `EuiPopoverPanel`<br>`EuiPopoverPanelContext` | `eui.popover-panel` | `node_modules/@elastic/eui/lib/components/popover/popover_panel/_popover_panel.js` |
 | `euiPopoverArrowStyles`<br>`popoverArrowSize` | `eui.eui-popover-arrow-styles` | `node_modules/@elastic/eui/lib/components/popover/popover_arrow/_popover_arrow.styles.js` |
 | `EuiPopoverArrow`<br>`POSITIONS` | `eui.popover-arrow` | `node_modules/@elastic/eui/lib/components/popover/popover_arrow/_popover_arrow.js` |
@@ -391,7 +391,8 @@ This table maps variable names to the file on disk. So if you need to just manua
 | `SIZES`<br>`TYPES`<br>`checkValidColor`<br>`EuiAvatar` | `eui.avatar` | `node_modules/@elastic/eui/lib/components/avatar/avatar.js` |
 | `euiAvatarStyles` | `eui.eui-avatar-styles` | `node_modules/@elastic/eui/lib/components/avatar/avatar.styles.js` |
 | `EuiTourStep` | `eui.tour-step` | `node_modules/@elastic/eui/lib/components/tour/tour_step.js` |
-| `STATUS`<br>`EuiTourStepIndicator` | `eui.tour-step-indicator` | `node_modules/@elastic/eui/lib/components/tour/tour_step_indicator.js` |
+| `euiTourFooterStyles`<br>`euiTourHeaderStyles`<br>`euiTourBeaconStyles`<br>`euiTourStyles` | `eui.eui-tour-footer-styles` | `node_modules/@elastic/eui/lib/components/tour/tour.styles.js` |
+| `EuiTourStepIndicator` | `eui.tour-step-indicator` | `node_modules/@elastic/eui/lib/components/tour/tour_step_indicator.js` |
 | `EuiTour` | `eui.tour` | `node_modules/@elastic/eui/lib/components/tour/tour.js` |
 | `useEuiTour` | `eui.use-eui-tour` | `node_modules/@elastic/eui/lib/components/tour/useEuiTour.js` |
 | `EuiAutoSizer` | `eui.auto-sizer` | `node_modules/@elastic/eui/lib/components/auto_sizer/auto_sizer.js` |
@@ -1008,9 +1009,10 @@ This table maps variable names to the file on disk. So if you need to just manua
 | `useColorStopsState`<br>`useColorPickerState` | `eui.services.color-picker` | `node_modules/@elastic/eui/lib/services/color_picker/color_picker.js` |
 | `EuiWindowEvent` | `eui.window-event` | `node_modules/@elastic/eui/lib/services/window_event/window_event.js` |
 | `Timer` | `eui.services.timer` | `node_modules/@elastic/eui/lib/services/time/timer.js` |
-| `useIsWithinBreakpoints` | `eui.services.use-is-within-breakpoints` | `node_modules/@elastic/eui/lib/services/breakpoint/useIsWithinBreakpoints.js` |
-| `useCurrentEuiBreakpoint`<br>`CurrentEuiBreakpointContext`<br>`CurrentEuiBreakpointProvider` | `eui.services.current-eui-breakpoint` | `node_modules/@elastic/eui/lib/services/breakpoint/currentEuiBreakpoint.js` |
-| `isWithinBreakpoints`<br>`BREAKPOINTS`<br>`isWithinMinBreakpoint`<br>`isWithinMaxBreakpoint`<br>`BREAKPOINT_KEYS`<br>`getBreakpoint` | `eui.services.breakpoint` | `node_modules/@elastic/eui/lib/services/breakpoint/breakpoint.js` |
+| `sortMapByLargeToSmallValues`<br>`sortMapBySmallToLargeValues` | `eui.services.sorting` | `node_modules/@elastic/eui/lib/services/breakpoint/_sorting.js` |
+| `useIsWithinMaxBreakpoint`<br>`useIsWithinBreakpoints`<br>`useIsWithinMinBreakpoint` | `eui.services.is-within-hooks` | `node_modules/@elastic/eui/lib/services/breakpoint/is_within_hooks.js` |
+| `CurrentEuiBreakpointContext`<br>`CurrentEuiBreakpointProvider` | `eui.services.current-breakpoint` | `node_modules/@elastic/eui/lib/services/breakpoint/current_breakpoint.js` |
+| `useCurrentEuiBreakpoint` | `eui.services.current-breakpoint-hook` | `node_modules/@elastic/eui/lib/services/breakpoint/current_breakpoint_hook.js` |
 | `isWithinRange`<br>`isEvenlyDivisibleBy` | `eui.services.number` | `node_modules/@elastic/eui/lib/services/number/number.js` |
 | `calculatePopoverPosition` | `eui.services.calculate-popover-position` | `node_modules/@elastic/eui/lib/services/popover/calculate_popover_position.js` |
 | `findPopoverPosition`<br>`getAvailableSpace`<br>`getVisibleFit`<br>`intersectBoundingBoxes`<br>`getPopoverScreenCoordinates`<br>`getElementZIndex`<br>`POSITIONS`<br>`getElementBoundingBox` | `eui.services.popover-positioning` | `node_modules/@elastic/eui/lib/services/popover/popover_positioning.js` |
