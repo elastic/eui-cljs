@@ -8,12 +8,12 @@
 
 (def themes
   {:light
-   {:css (load-file "dist/eui_theme_amsterdam_light.min.css")
-    :values (load-json "dist/eui_theme_amsterdam_light.json")}
+   {:css (load-file "dist/eui_theme_light.min.css")
+    :values (load-json "dist/eui_theme_light.json")}
 
    :dark
-   {:css (load-file "dist/eui_theme_amsterdam_dark.min.css")
-    :values (load-json "dist/eui_theme_amsterdam_dark.json")}})
+   {:css (load-file "dist/eui_theme_dark.min.css")
+    :values (load-json "dist/eui_theme_dark.json")}})
 
 (defn next-theme
   "Returns the opposite theme for the current value
