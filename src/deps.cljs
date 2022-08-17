@@ -1,5 +1,5 @@
 {:npm-deps
- {"@elastic/eui" "63.0.0",
+ {"@elastic/eui" "64.0.0",
   "@elastic/datemath" "^5.0.3",
   "classnames" "^2.2.6",
   "moment" "^2.27.0",
