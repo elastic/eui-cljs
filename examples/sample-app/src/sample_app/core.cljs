@@ -7,8 +7,7 @@
             [eui.icon-logo-elastic :refer [logoElastic]]
             [eui.page :refer [EuiPage]]
             [eui.page-body :refer [EuiPageBody]]
-            [eui.page-content :refer [EuiPageContent]]
-            [eui.page-content-body :refer [EuiPageContentBody]]
+            [eui.page-section :refer [EuiPageSection]]
             [eui.page-header :refer [EuiPageHeader]]
             [eui.provider :refer [EuiProvider]]
             [eui.text :refer [EuiText]]
@@ -44,13 +43,12 @@
                                                                       (theme/set-theme! next-theme))}
                                              (str "Toggle theme: " (name next-theme))])]
                           :paddingSize "l"}]
-       [:> EuiPageContent
-        [:> EuiPageContentBody
+       [:> EuiPageSection
          [title-form]
          [:> EuiHorizontalRule]
          [:> EuiText
           [:h3 "More info"]
-          [:p "Children passed to EUI component are automatically converted thanks to Reagent interop `:>`, but passing components through props should be converted with `(r/as-element)` first :)"]]]]]]]))
+          [:p "Children passed to EUI component are automatically converted thanks to Reagent interop `:>`, but passing components through props should be converted with `(r/as-element)` first :)"]]]]]]))
 
 (defn init []
   ;; Work around needed because the Closure compiler does not
