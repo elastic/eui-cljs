@@ -5,4 +5,4 @@
         org.clojure/clojurescript {:mvn/version "1.10.879"}
         com.google.javascript/closure-compiler-unshaded {:mvn/version "v20210505"}
         reagent/reagent {:mvn/version "1.0.0"}
-        co.elastic/eui-cljs {:mvn/version "41.2.0"}}}
+        co.elastic/eui-cljs {:mvn/version "64.0.0"}}}

@@ -11,7 +11,9 @@
   },
   "dependencies": {
     "@elastic/datemath": "^5.0.3",
-    "@elastic/eui": "41.2.0",
+    "@elastic/eui": "64.0.0",
+    "@emotion/cache": "^11.10.5",
+    "@emotion/react": "^11.10.5",
     "classnames": "^2.2.6",
     "moment": "^2.27.0",
     "prop-types": "^15.6.0",
