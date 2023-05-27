@@ -5,6 +5,8 @@
 
 (def TYPES eui/TYPES)
 
+(def CASING eui/CASING)
+
 (def checkValidColor eui/checkValidColor)
 
 (def EuiAvatar eui/EuiAvatar)

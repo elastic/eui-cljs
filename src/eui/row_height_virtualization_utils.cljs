@@ -1,5 +1,7 @@
-(ns eui.cell-paddings-map
+(ns eui.row-height-virtualization-utils
   (:require ["@elastic/eui/lib/components/datagrid/utils/row_heights.js" :as eui]))
+
+(def RowHeightVirtualizationUtils eui/RowHeightVirtualizationUtils)
 
 (def cellPaddingsMap eui/cellPaddingsMap)
 

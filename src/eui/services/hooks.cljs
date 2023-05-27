@@ -4,3 +4,5 @@
 (def withEuiTheme eui/withEuiTheme)
 
 (def useEuiTheme eui/useEuiTheme)
+
+(def RenderWithEuiTheme eui/RenderWithEuiTheme)

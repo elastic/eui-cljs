@@ -1,4 +1,4 @@
 {:group-id "co.elastic",
  :artifact-id "eui-cljs",
  :scm-url "https://github.com/elastic/eui-cljs",
- :version "64.0.0"}
+ :version "81.0.0-SNAPSHOT"}

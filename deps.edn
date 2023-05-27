@@ -1,8 +1,8 @@
 {:paths ["src"]
 
- :deps {org.clojure/clojurescript {:mvn/version "1.10.893"}
-        org.clojure/clojure {:mvn/version "1.10.3"}
-        cheshire/cheshire {:mvn/version "5.10.1"}}
+ :deps {org.clojure/clojurescript {:mvn/version "1.11.60"}
+        org.clojure/clojure {:mvn/version "1.11.1"}
+        cheshire/cheshire {:mvn/version "5.11.0"}}
 
  :aliases
  {:scripts

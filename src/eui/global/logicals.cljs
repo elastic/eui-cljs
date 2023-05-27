@@ -17,6 +17,10 @@
 
 (def LOGICAL_SIDES eui/LOGICAL_SIDES)
 
+(def logicalStyles eui/logicalStyles)
+
+(def logicalCSSWithFallback eui/logicalCSSWithFallback)
+
 (def logicalCSS eui/logicalCSS)
 
 (def LOGICAL_TEXT_ALIGNMENT eui/LOGICAL_TEXT_ALIGNMENT)

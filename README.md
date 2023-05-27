@@ -1,4 +1,4 @@
-# A Clojurescript wrapper for EUI v[64.0.0](https://elastic.github.io/eui/#/package/changelog)
+# A Clojurescript wrapper for EUI v[81.0.0](https://elastic.github.io/eui/#/package/changelog)
 
 Smooths out the experience of using EUI from Clojurescript
 

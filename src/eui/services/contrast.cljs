@@ -3,4 +3,6 @@
 
 (def makeDisabledContrastColor eui/makeDisabledContrastColor)
 
+(def wcagContrastMin eui/wcagContrastMin)
+
 (def makeHighContrastColor eui/makeHighContrastColor)

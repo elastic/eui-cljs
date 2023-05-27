@@ -6,5 +6,3 @@
 (def EuiButtonIcon eui/EuiButtonIcon)
 
 (def DISPLAYS eui/DISPLAYS)
-
-(def COLORS eui/COLORS)

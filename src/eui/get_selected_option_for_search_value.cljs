@@ -5,4 +5,6 @@
 
 (def getMatchingOptions eui/getMatchingOptions)
 
+(def transformForCaseSensitivity eui/transformForCaseSensitivity)
+
 (def flattenOptionGroups eui/flattenOptionGroups)

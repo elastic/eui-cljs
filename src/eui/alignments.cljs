@@ -6,3 +6,5 @@
 (def TEXT_STYLES eui/TEXT_STYLES)
 
 (def TYPES eui/TYPES)
+
+(def GUTTER_SIZES eui/GUTTER_SIZES)

@@ -5,6 +5,8 @@
 
 (def useEuiYScroll eui/useEuiYScroll)
 
+(def euiFullHeight eui/euiFullHeight)
+
 (def euiScrollBarStyles eui/euiScrollBarStyles)
 
 (def euiYScroll eui/euiYScroll)
@@ -14,6 +16,8 @@
 (def useEuiScrollBar eui/useEuiScrollBar)
 
 (def euiXScroll eui/euiXScroll)
+
+(def euiSupportsHas eui/euiSupportsHas)
 
 (def useEuiOverflowScroll eui/useEuiOverflowScroll)
 

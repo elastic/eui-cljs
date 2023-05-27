@@ -6,5 +6,3 @@
 (def SIZES eui/SIZES)
 
 (def FLUSH_TYPES eui/FLUSH_TYPES)
-
-(def COLORS eui/COLORS)
